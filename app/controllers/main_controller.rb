@@ -40,7 +40,7 @@ class MainController < ApplicationController
       flash[:notice] = "your comment was submitted successfully, it will be posted after admin's approval"
       redirect_to (post_view_path, :id => @post.id)
     else
-      render (:template => 'shared/view_post')
+      render(:template => 'shared/view_post')
     end
   end
 
