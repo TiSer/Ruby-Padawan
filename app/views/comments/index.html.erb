@@ -24,8 +24,9 @@
 			<div class="comment">
 			<div class="comment-lead">On post <em><%= comment.post.title %></em> <%= mail_to(h(comment.author_email), h(comment.author)) %> wrote:</div>
 			<div class="comment-text">
-				<%= truncate(h(comment.content),{90,"..."}) %>
-				<%= link_to('view all', :action => 'show', :id => comment) if h(comment.content).length > 90 %>
+				<%#= truncate(h(comment.content),{90,"..."}) %>
+				<%= h(comment.content) %>
+				<%#= link_to('view all', :action => 'show', :id => comment) if h(comment.content).length > 90 %>
 			</div>
 			</div>
 		</td>
