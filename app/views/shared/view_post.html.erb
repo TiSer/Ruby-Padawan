@@ -4,7 +4,7 @@
   
   <div class="comments">
     <a name="comments"></a>
-    <%= render (:partial => 'shared/comment', :collection => @post.approved_comments) %>
+    <%= render(:partial => 'shared/comment', :collection => @post.approved_comments) %>
   </div>  
 
     <% if !@comment.blank? %>
