@@ -1,0 +1,23 @@
+<div id="left-column">
+  <p><%= link_to ("<--- Back to Main", main_path, :style => 'font-size: 1.2em;') %></p>
+  <%= render(:partial => 'shared/post', :locals => {:post => @post }) %>
+  
+  <div class="comments">
+    <a name="comments"></a>
+    <%= render (:partial => 'shared/comment', :collection => @post.approved_comments) %>
+  </div>  
+
+    <% if !@comment.blank? %>
+    <div class="comment_form"> <h2>You can write comment for this post below:</h2>
+      <%= form_tag(add_comment_path(@post.id)) do %>
+        <%= render(:partial => 'shared/comment_form') %>
+        <%= submit_tag("Submit comment") %>
+      <% end %>
+    </div>
+    <% end %>
+
+</div>
+
+<div id="right-column">
+  <%= render(:partial => 'shared/right_column') %>
+</div>

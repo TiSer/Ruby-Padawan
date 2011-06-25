@@ -1,0 +1,19 @@
+class AddPostCounter < ActiveRecord::Migration
+  def self.up
+  # add_column :users, :posts_count, :integer, :limit => 4, :default => 0, :null => false
+
+    #User.find(:all).each do |user|
+     # current_count = user.posts.size
+     # user.update_attribute(:posts_count, current_count)
+    #end
+    
+    #User.find(:all).each do |user|
+     #current_count = user.posts.length
+     #user.update_attribute(:posts_count, current_count)
+    #end
+  end
+
+  def self.down
+   # remove_column :users, :posts_count
+  end
+end

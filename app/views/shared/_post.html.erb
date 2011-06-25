@@ -1,0 +1,21 @@
+  <div class="post">
+			<div class="title"><h3><%= link_to(h(post.title), post_view_path(post)) %></h3>
+      </div>
+			<div class="byline">
+        <span class="categories">Posted 
+          <% if !post.categories.empty? %>
+            in <%= post.categories.collect {|cat| cat.name }.to_sentence %>
+          <% end %>
+        </span>
+				<span class="author">by <b><%= h(post.author.display_name) %></b> </span>
+        <span class="date">on <%= strip_zeros_from_date(post.created_at.strftime("%B *%d, %Y")) %>
+                              (<%= user_relative_time(post.created_at) %>) </span>
+      
+	</div>
+
+	<div class="main_post"><%= prepare_post_body(post.body) %></div>
+                         <%# .gsub!("\n", "<br />") %>
+			<div class="other-info">
+		    <span class="comment-summary"><%= link_to pluralize(post.approved_comments.size, 'comment'), post_view_path(post, :anchor => 'comments') %></span>
+			</div>
+	</div>

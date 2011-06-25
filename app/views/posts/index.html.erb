@@ -1,0 +1,34 @@
+<% @page_title = 'Listing Posts' %>
+
+<%= content_tag('p', link_to('<--- Back', staff_path)) %>
+
+<table>
+  <tr>
+    <th>Created</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Categories</th>
+    <th>Status</th>
+    <th>Comments</th>
+  </tr>
+
+<% for post in @posts %>
+	<tr class="<%= cycle('row1', 'row2')%>">
+		<td><%= post.created_at.strftime('%m/%d/%y %I:%m %p') %></td>
+		<td><%= h(post.title) %></td>
+		<td><%= h(post.author.display_name) if post.author %></td>
+		<td><%= post.categories.collect {|cat| cat.name }.join(", ") %>
+		<td><%= h(post.status) %></td>
+		<td><%= post.comments_count %>
+		<td><%= link_to'Preview', {:action => 'show', :id => post}, :target => '_blank' %></td>
+		<td><%= link_to 'Edit', edit_post_path(post) %></td>
+		<td><%= link_to 'Destroy', post, :confirm => 'Are you sure you want to remove this category?', :method => :delete %>
+	</tr>
+<% end %>
+</table>
+
+<%#= will_paginate(@posts) %>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
