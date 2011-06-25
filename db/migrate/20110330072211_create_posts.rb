@@ -10,7 +10,7 @@ class CreatePosts < ActiveRecord::Migration
 	    t.column :created_at, :datetime
     end
 
-#	Post.create ( :title => "Hello", :body => "Hello from racoon", :author => "Urubok", :category => "Legal", :status => "approved", :created_at => "05.05.1989" )
+#	Post.create(:title => "Hello", :body => "Hello from racoon", :author => "Urubok", :category => "Legal", :status => "approved", :created_at => "05.05.1989")
 
   end
 

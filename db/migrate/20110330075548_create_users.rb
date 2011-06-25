@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration
 	
     end
 
-#	User.create ( :username => "racoon", :hashed_password => "racoon", :first_name => "Urubok", :last_name => "Ury", :email => "uruby@mailforspam.com", :display_name => 'Racoony', :user_level => 9 )
+#	User.create(:username => "racoon", :hashed_password => "racoon", :first_name => "Urubok", :last_name => "Ury", :email => "uruby@mailforspam.com", :display_name => 'Racoony', :user_level => 9)
 
   end
 
