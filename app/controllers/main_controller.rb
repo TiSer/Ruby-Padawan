@@ -28,7 +28,7 @@ class MainController < ApplicationController
   def view_post
     @post = Post.find(params[:id], :include => [:author, :categories, :approved_comments])
     @comment = Comment.new
-    render (:template => 'shared/view_post')
+    render(:template => 'shared/view_post')
   end
 
   def add_comment
@@ -38,7 +38,7 @@ class MainController < ApplicationController
     @comment.status = "new"
     if @comment.save
       flash[:notice] = "your comment was submitted successfully, it will be posted after admin's approval"
-      redirect_to (post_view_path, :id => @post.id)
+      redirect_to(post_view_path, :id => @post.id)
     else
       render(:template => 'shared/view_post')
     end
