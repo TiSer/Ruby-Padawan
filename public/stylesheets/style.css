@@ -1,5 +1,5 @@
 html { height: 100%; width: 100%; background: url('/images/bg-body.png'); }
-body { /*background: #484848; color: #DDDDDD*/ border: 0.1em solid #006633; padding: 0.4em; }
+body { /*background: #484848; color: #DDDDDD*/ border: 0.1em solid #006633; padding: 0.4em;  }
 body table { width: 100%; border-collapse: collapse; }
 table tr td, table tr th { vertical-align: top; }
 th { text-align: left; }
@@ -38,7 +38,7 @@ a:hover { background: #F0F0F0; }
 .post, .comments { margin: 1em; padding-bottom: 1em; }
 
 
-.post { margin-bottom: 2em; }
+.post { margin-bottom: 2em; background: #E8E8E8; padding: 5px; }
 .post .title { font-size: 1.2em; font-weight: bold; }
 .post .author { font-size: .8em; }
 .post .date { font-size: .8em; }
