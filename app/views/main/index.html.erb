@@ -1,3 +1,7 @@
+<div>
+  <%= will_paginate(@posts) %>
+</div>
+
 <div id="left-column" class="sm_round">
 
   <div id="posts">
@@ -7,7 +11,7 @@
     <%= render(:partial => 'shared/post', :collection => @posts ) %>
     <% 'There are no posts that match your selection' if @posts.empty? %>
   </div>
-  <%= will_paginate(@posts) %>
+  
 </div>
 
 <div id="right-column">

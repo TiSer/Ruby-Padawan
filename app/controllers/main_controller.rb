@@ -3,12 +3,12 @@ class MainController < ApplicationController
   before_filter :set_all_categories, :set_archive_list
 
   def index
-    @posts = Post.paginate(:all, :page => params[:page], :conditions => "posts.status = 'published'", :order => "posts.created_at DESC", :include => [:author, :categories, :comments], :per_page => 6)
+    @posts = Post.paginate(:all, :page => params[:page], :conditions => "posts.status = 'published'", :order => "posts.created_at DESC", :include => [:author, :categories, :comments], :per_page => 5)
   end
 
   def category
 #    @posts = Post.find(:all, :include => [:author, :categories], :conditions => ["status" = 'published' AND categories.id = ?", params[:id]], :order => "posts.created_at DESC")   почему не работает?!
-    @posts = Post.paginate(:all, :page => params[:page], :per_page => 2,
+    @posts = Post.paginate(:all, :page => params[:page], :per_page => 3,
 			:include => [:author, :categories],
 			:conditions => ["status = 'published' AND categories.id = ?", params[:id]], 
 			:order => "posts.created_at DESC")
@@ -18,7 +18,7 @@ class MainController < ApplicationController
   def archive
     start_time = Time.mktime(params[:year] || 2011, params[:month] || 1, params[:day] || 1)
     end_time = start_time.next_month
-    @posts = Post.paginate(:all, :page => params[:page], :per_page => 2,
+    @posts = Post.paginate(:all, :page => params[:page], :per_page => 3,
 			:include => [:author, :categories],
 			:conditions => ["status = 'published' AND posts.created_at BETWEEN ? AND ?", start_time, end_time], 
 			:order => "posts.created_at DESC")

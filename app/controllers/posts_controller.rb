@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def index
     #paginate is going to access params[:page]
-#    @post_pages, @posts = paginate(:posts, :per_page => 2)
+#    @post_pages, @posts = paginate(:posts, :per_page => 3)
 
 #     @posts = Post.paginate(:page => params[:page], :conditions => "status = 'published'", :order => "posts.created_at DESC", :include => [:author, :categories, :comments])
 
