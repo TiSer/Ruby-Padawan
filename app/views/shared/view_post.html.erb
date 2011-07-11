@@ -1,5 +1,8 @@
+<div id="right-column">
+  <%= render(:partial => 'shared/right_column') %>
+</div>
 <div id="left-column">
-  <p style="font-size: 1.2em"><%= link_to("<--- Back to Main", main_path) %></p>
+  <p style="font-size: 1.2em; padding:5px"><%= link_to("<--- Back to Main", main_path, :style => "color:#900000") %></p>
   <%= render(:partial => 'shared/post', :locals => {:post => @post }) %>
   
   <div class="comments">
@@ -8,16 +11,12 @@
   </div>  
 
     <% if !@comment.blank? %>
-    <div class="comment_form"> <h2>You can write comment for this post below:</h2>
+    <div class="comment_form"> <h2 class="viewposth2">Write comment for this post:</h2>
       <%= form_tag(add_comment_path(@post.id)) do %>
         <%= render(:partial => 'shared/comment_form') %>
-        <%= submit_tag("Submit comment") %>
+        <p align="right" style="padding:5px"><%= submit_tag("Submit comment") %></p>
       <% end %>
     </div>
     <% end %>
 
-</div>
-
-<div id="right-column">
-  <%= render(:partial => 'shared/right_column') %>
 </div>

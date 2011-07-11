@@ -1,4 +1,4 @@
-  <div class="post">
+  <div class="post round">
 			<div class="title"><h3><%= link_to(h(post.title), post_view_path(post)) %></h3>
       </div>
 			<div class="byline">
@@ -13,7 +13,7 @@
       
 	</div>
 
-	<div class="main_post"><pre><%= prepare_post_body(post.body) %></pre></div>
+	<div class="main_post"><pre class="round"><%= prepare_post_body(post.body) %></pre></div>
                          <%# .gsub!("\n", "<br />") %>
 			<div class="other-info">
 		    <span class="comment-summary"><%= link_to pluralize(post.approved_comments.size, 'comment'), post_view_path(post, :anchor => 'comments') %></span>
