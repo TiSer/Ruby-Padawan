@@ -1,6 +1,6 @@
 module MainHelper
   def prepare_post_body( body )
-    return auto_link( strip_tags( simple_format(h(body) ) ) )
+    return auto_link( body.html_safe)
   end
 
   def strip_zeros_from_date(marked_date_string)

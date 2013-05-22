@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   # Pick a unique cookie name to distinguish our session data from others'
-  session :session_key => '_simple_blog'
+#  session :session_key => '_simple_blog'
   #session :disabled => true
   
   private #------------

@@ -7,24 +7,28 @@ class User < ActiveRecord::Base
   attr_accessor :password
 #  attr_accessible :first_name, :last_name, :email, :display_name, :user_level, :username, :password
   attr_protected :hashed_password, :salt
+  before_create :user_pass_create
+  before_update :user_pass_update
+  after_save :pass_to_nil
+  before_destroy :false_if_admin
 
-  def before_create
+  def user_pass_create
     self.salt = User.make_salt(self.username)
     self.hashed_password = User.hash_with_salt(@password, self.salt)
   end
 
-  def before_update
+  def user_pass_update
     if !@password.blank?
       self.salt = User.make_salt(self.username) if self.salt.blank? 
       self.hashed_password = User.hash_with_salt(@password, self.salt)
     end
   end
   
-  def after_save
+  def pass_to_nil
     @password = nil
   end
 
-  def before_destroy
+  def false_if_admin
     return false if self.id == 1
   end
 
