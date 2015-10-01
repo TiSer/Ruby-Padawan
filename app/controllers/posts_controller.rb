@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @all_categories = Category.find(:all, :order => "name ASC")
+    @all_categories = Category.all.order("name ASC")
     #render (:template => 'shared/view_post', :layout => 'application')
     respond_to do |format|
      format.html { redirect_to(post_view_path,  :layout => 'application')}
@@ -111,11 +111,11 @@ class PostsController < ApplicationController
   end
 
   def get_user_list
-    return User.find(:all, :order => 'last_name ASC').collect { |user| [ user.full_name, user.id ] }
+    return User.all.order('last_name ASC').collect { |user| [ user.full_name, user.id ] }
   end
 
   def get_all_categories
-    return Category.find(:all, :order => 'name ASC')
+    return Category.all.order('name ASC')
   end
 
   def get_categories_from(cat_list)

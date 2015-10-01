@@ -7,13 +7,13 @@ class CommentsController < ApplicationController
   def index
     case params[:status]
     when 'approved'
-      @comments = Comment.find(:all, :conditions => "status = 'approved'", :order => 'created_at DESC')
+      @comments = Comment.all.where("status = 'approved'").order('created_at DESC')
     when 'spam'
-      @comments = Comment.find(:all, :conditions => "status = 'spam'", :order => 'created_at DESC')      
+      @comments = Comment.all.where("status = 'spam'").order('created_at DESC')
     when 'all'
-      @comments = Comment.find(:all, :order => 'created_at DESC')
+      @comments = Comment.all.order('created_at DESC')
     else #new
-      @comments = Comment.find(:all, :conditions => "status = 'new'", :order => 'created_at DESC')      
+      @comments = Comment.all.where("status = 'new'").order('created_at DESC')
     end
   end
 

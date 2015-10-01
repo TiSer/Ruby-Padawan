@@ -1,18 +1,14 @@
 source 'http://rubygems.org'
 ruby "2.2.3"
 
-gem 'rails', '3.0.20'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'mysql2','0.4.1'
-
+gem 'rails', '4.2'
+gem 'mysql'
+gem 'pg'
 gem 'json', '1.8.3'
-
-gem 'rinku'
-
 gem 'puma'
+gem 'rinku'
+gem "protected_attributes", "~> 1.0.7"
+gem 'jquery-rails'
 
 group :development, :test do
   gem "pry-rails"

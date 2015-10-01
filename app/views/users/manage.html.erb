@@ -9,7 +9,7 @@
 
 	<% if params[:id].blank? %>
 		<h1>New user</h1>
-		<% form_tag(users_path, :method => :post) do %>
+		<% form_tag(manage_users_path, :method => :post) do %>
 		  <%= render :partial => 'form' %>
 		  <%= submit_tag "Create", :style => 'margin: 1em 0 1em 310px;' %>
 		<% end %>

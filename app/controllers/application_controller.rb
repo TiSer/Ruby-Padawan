@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  layout "application"
+
   protect_from_forgery
 
   # Pick a unique cookie name to distinguish our session data from others'

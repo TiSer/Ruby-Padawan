@@ -1,6 +1,6 @@
 <% @page_title = 'Staff Area Login' %>
 
-<% form_tag(staff_login_path) do %>
+<%= form_tag(staff_send_login_path) do %>
 
 	<p>Username: <%= text_field_tag('username', params[:username]) %></p>
 

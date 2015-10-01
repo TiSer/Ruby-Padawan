@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts, :foreign_key => 'author_id'
-  has_many :recent_posts, :class_name => 'Post', :order => 'created_at ASC', :limit => 5
+  has_many :recent_posts, -> {where(order: 'created_at ASC', limit: 5)}, :class_name => 'Post'
 
   validates_uniqueness_of :username
 
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   end
 
 	def self.authenticate(username = "", password = "")
-    user = self.find(:first, :conditions => ["username = ?", username])
+    user = self.where("username = ?", username).first
     return (user && user.authenticated?(password)) ? user : nil
   end
 
