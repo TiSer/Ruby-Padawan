@@ -57,7 +57,6 @@ GEM
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.1)
-    mysql (2.9.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.3)
@@ -124,7 +123,6 @@ DEPENDENCIES
   awesome_print
   jquery-rails
   json (= 1.8.3)
-  mysql
   pg
   protected_attributes (~> 1.0.7)
   pry-rails

@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 ruby "2.2.3"
 
 gem 'rails', '4.2'
-gem 'mysql'
 gem 'pg'
 gem 'json', '1.8.3'
 gem 'puma'
