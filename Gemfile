@@ -12,6 +12,8 @@ gem 'json', '1.8.3'
 
 gem 'rinku'
 
+gem 'puma'
+
 group :development, :test do
   gem "pry-rails"
   gem 'awesome_print'
