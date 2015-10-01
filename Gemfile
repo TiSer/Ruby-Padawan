@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rinku'
 gem "protected_attributes", "~> 1.0.7"
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem "pry-rails"
